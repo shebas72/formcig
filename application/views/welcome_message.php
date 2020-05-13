@@ -526,6 +526,8 @@ confirm_password.onkeyup = validatePassword;
 					</div>
 				</div>
 			</form>
+<div align="center"> <a href="<?= base_url(); ?>project">Projects</a> | <a href="<?= base_url(); ?>cat">Categories</a>  </div>
+
 		</div>
 	</div>
 

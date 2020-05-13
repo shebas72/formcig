@@ -52,9 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="<?= base_url(); ?>project/doRegister" method="post">
+			<form class="contact100-form validate-form" action="<?= base_url(); ?>cat/doRegister" method="post">
 				<span class="contact100-form-title">
-					Create New Project
+					Add Category
 				</span>
 <?php if ($this->session->flashdata()) { ?>
       
@@ -65,9 +65,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php } ?>
 				<div class="wrap-input100">
 					<span class="label-input100">Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Project Name" required>
+					<input class="input100" type="text" name="name" placeholder="Enter Category Name" required>
 					<span class="focus-input100"></span>
 				</div>
+
+<div class="wrap-input100">
+					<span class="label-input100">Project</span>
+					<div>
+						<select class="selection-2" name="project" required>
+							<option value="">Choose Project</option>
+							<?php foreach($groups as $each){ ?>
+        <option value="<?php echo $each->name; ?>"><?php echo $each->name; ?></option>';
+    <?php } ?>
+
+							</select>
+</div>
+</div>
+
+
+
+
+				<!-- <div class="wrap-input100">
+					<span class="label-input100">Project</span>
+					<input class="input100" type="text" name="" placeholder="Enter Project Name" required>
+					<span class="focus-input100"></span>
+				</div> -->
 
 				<div class="wrap-input100">
                     <span class="label-input100">Description</span>
@@ -89,10 +111,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</form>
+			<p>&nbsp;</p>
+			
+<div align="center"> <a href="<?= base_url(); ?>">Home</a> | <a href="<?= base_url(); ?>project">Project</a>  </div>
 
-            <p>&nbsp;</p>
-            
-<div align="center"> <a href="<?= base_url(); ?>">Home</a> | <a href="<?= base_url(); ?>cat">Categories</a>  </div>
 		</div>
 	</div>
 
